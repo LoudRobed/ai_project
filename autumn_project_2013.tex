@@ -5,7 +5,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}							% To include graphics
 \usepackage{natbib}								% Correct citations
-%\usepackage{fancyheadings}						% Nice header and footer
+\usepackage{fancyheadings}						% Nice header and footer
 \usepackage[linktocpage,colorlinks]{hyperref}			% PDF hyperlink
 \usepackage{geometry} 							% Better geometry
 \usepackage{mathtools}                          % for typing math
@@ -19,7 +19,7 @@
 % Fill in here, and use commands in the text. 
 \newcommand{\thesisAuthor}{Andreas Hagen}
 \newcommand{\thesisTitle}{Evolving Self Sacrifice}
-\newcommand{\thesisType}{Specialisation project}
+\newcommand{\thesisType}{Specialization project}
 \newcommand{\thesisDate}{fall 2013}
 
 % PDF info
@@ -31,16 +31,16 @@
 \hypersetup{urlcolor=black}
 
 %Fancy headings
-%\pagestyle{fancy}
-%\pagestyle{fancyplain}
-%\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
-%\renewcommand{\sectionmark}[1]{\markright{#1}{}}
-%\lhead[\fancyplain{}{\thepage}]{\fancyplain{}{\let\uppercase\relax\leftmark}}
-%\rhead[\fancyplain{}{\let\uppercase\relax\rightmark}]{\fancyplain{}{\thepage}}
-%\chead[\fancyplain{}{}]{\fancyplain{}{}}
-%\lfoot[\fancyplain{}{}]{\fancyplain{}{}}
-%\cfoot[\fancyplain{}{}]{\fancyplain{}{}}
-%\rfoot[\fancyplain{}{}]{\fancyplain{}{}}
+\pagestyle{fancy}
+\pagestyle{fancyplain}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{#1}{}}
+\lhead[\fancyplain{}{\thepage}]{\fancyplain{}{\let\uppercase\relax\leftmark}}
+\rhead[\fancyplain{}{\let\uppercase\relax\rightmark}]{\fancyplain{}{\thepage}}
+\chead[\fancyplain{}{}]{\fancyplain{}{}}
+\lfoot[\fancyplain{}{}]{\fancyplain{}{}}
+\cfoot[\fancyplain{}{}]{\fancyplain{}{}}
+\rfoot[\fancyplain{}{}]{\fancyplain{}{}}
 % Citation format
 \bibliographystyle{apalike}
 \bibpunct{[}{]}{;}{a}{,}{,}
@@ -61,9 +61,12 @@
 \noindent Artificial Intelligence Group\\ Department of Computer and Information Science\\ Faculty of Information Technology, Mathematics and Electrical Engineering\\
 
 \vfill
+%\begin{figure}[p]
 \begin{center}
-\includegraphics[width=3cm]{ntnu.pdf}
+\centering
+\includegraphics[trim=12cm 10cm 13cm 14cm, scale=0.9]{ntnu.pdf}
 \end{center}
+%\end{figure}
 \end{titlepage}
 
 \thispagestyle{empty}
@@ -75,9 +78,11 @@
 \section*{Abstract}
 
 
-In this paper the different mechanisms that enable the evolution of altruistic behaviour in evolutionary computationare explored. 
-The research is motivated by the need for autonomous evolving robots to evolve relevant traits needed to avoid extinction in a dynamic environment. 
-The paper contains a structured litterature review on the field of altruism in artificial evolution that places this work in context with contemporary research. 
+In this paper the different mechanisms that enable the evolution of altruistic behavior in evolutionary computation are explored. 
+The research is motivated by the need for systems using embodied evolution to evolve relevant traits needed to avoid extinction in a dynamic environment.
+In particular interest is the subject of self-sacrifice where individuals relinquish the chance of reproduction altogether to assist others. 
+The paper contains a structured literature review on altruism in simulated environments in artificial evolution. 
+The literature review results in the question of whether or not kin-selection is a prerequisite for the evolution of self-sacrifice.  
 
 %\begin{itemize}
 %\item the field of research
@@ -97,7 +102,7 @@ The paper contains a structured litterature review on the field of altruism in a
 
 \vspace{1cm}
 
-This paper was written as a specialisation project in the autumn of 2013 at the Norwegian University of Science and Technology. It was officially supervised by Pauline Haddow with assistance by Jean-Marc Montanier.
+This paper was written as a specialization project in the autumn of 2013 at the Norwegian University of Science and Technology. It was officially supervised by Pauline Haddow with assistance by Jean-Marc Montanier.
 %The preface includes the facts - what type of project, where it is conducted, who supervised and any acknowledgements you wish to give. 
 
 \vfill
@@ -119,13 +124,13 @@ This paper was written as a specialisation project in the autumn of 2013 at the 
 \chapter{Introduction}
 \label{cha:Introduction}
 
-This paper explores the different mechanisms that are responsible for the evolution of altruistic behaviour and in the most extreme case, the act of self-sacrifice.
-The intented use is within the field of sub-symbolic AI where wanted behaviour is often found by mimicking the mechanisms of natural evolution. 
-The goal of the paper is to shed light on what mechanisms we know to exist from nature and how these have been utilized in the artificial evolution of altruism.
-Section \ref{sec:BackgroundAndMotivation} gives a cursory introduction to the field of artificial evolution and outlines why research on altruism is of interest.
-Chapter \ref{cha:STL} gives a review of the existing literature related to the mechanisms behind altruism and the simulation of these mechanisms in simulated 
-environments. Chapter \ref{cha:discussion} Gives a discussion of some of the questions that arise from the literature review and proposes a research question
-that adresses the most central problem. Some thoughts on how this question should be researched is also given. The protocol for the structured literature review and the documentation of the review is given in \ref{cha:appendices}
+This paper explores the research done on mechanisms that are responsible for the evolution of altruistic behavior and in the most extreme case; the act of self-sacrifice.
+The intended use is within the field of evolutionary computation where wanted behavior is often found by mimicking the mechanisms of natural evolution. 
+The goal of the paper is to shed light on how the mechanisms we know to exist from nature have been utilized in the artificial evolution of altruism.
+Section \ref{sec:BackgroundAndMotivation} gives a cursory introduction to the evolution of altruism and cooperation and outlines why research on altruism is of interest in artificial intelligence.
+Chapter \ref{cha:review} gives a review of the existing literature related to the mechanisms behind altruism and the simulation of these mechanisms in simulated 
+environments. Chapter \ref{cha:discussion} gives a discussion of some of the questions that arise from the literature review and proposes a research question
+that addresses one of the issues brought to attention. Some thoughts on how this question should be researched is also given. The protocol for the structured literature review and the documentation of the review is given in chapter \ref{cha:STL}
 
 %All chapters should begin with an introduction before any sections begin. Further, each sections begins with an introduction before  subsections begin. Chapters with just one section or sections with just one sub-section, should be avoided. Think carefully about chapter and section titles as each title stand alone in the table of contents (without associated text) and should convey meaning for the contents of the chapter or section. 
 
@@ -137,208 +142,120 @@ that adresses the most central problem. Some thoughts on how this question shoul
 \section{Background and Motivation}\label{cit}
 \label{sec:BackgroundAndMotivation}
 
-This section presents the theoretical background for the literature review on the mechanisms behind altruism in \ref{cha:review}. The goal is to clearly show where this research belongs and where it comes from. This section also presents the motivation for studying altruism in evolutionary computation, giving a rationale on why this topic is a worthwhile pursuit in general.
+This section presents the theoretical background for the literature review on the mechanisms behind altruism in chapter \ref{cha:review}. The goal is to clearly show where this research belongs and where it comes from. This section also presents the motivation for studying altruism in evolutionary computation, giving a rationale on why this topic is a worthwhile pursuit in general.
 
 \subsection{Theoretical Background}
 
-In the field of sub-symbolic AI there is interest in evolving solutions to problems by mimicking the mehcanisms of natural evolution. A sub-field of this is concerned with
-evolving altruistic behaviour.
-
-In evolutionary computation the solution to a problem has a genetic representation which is analogous to the genes of an individual in biology and a phenotype which is the expressino of the genotpye. The distiction between the two can be seen as the distinction between the blueprints for a mechanical object and the mechanical object themselves. A group of phenotypes is called a population and the process of optimizing the solutions are done in a process mimicking natural evolution where the best individuals in the population are combined to create new solutions in a new generation. 
-
-
-Self-Sacrifice is a form of extreme altruism and In order to understand the subject of the evolution of altruism in general and to explore the various conditions under which altruism is evolved I conducted a systematic literature review. 
+Altruism and cooperation is often seen in nature and there has been proposed many explanations on how this behavior is evolved through natural selection when individuals seek to maximize their own fitness.
+The most prevalent theory in literature is the notion of 'inclusive fitness' outlined in the classic texts by Hamilton such as \cite{w._d._hamilton_evolution_1963}, \cite{hamilton_genetical_1964-1} and \cite{hamilton_genetical_1964}.
+Inclusive fitness includes not only the fitness of the individual, but also the number of offsprings it has and is able to sustain. In short, inclusive fitness measures the success of the individuals in ensuring the survival of its genes. 
+An altruistic action is characterized by the cost C in form of decreased benefit, the benefit B given to the receiver and the relatedness r between the parties involved. Hamilton characterized the relationship between the three in the famous equation
 
 
-\cite{montanier_environment-driven_2013} presents a partial review of the most recognized mechanisms thataccount for the emergence of altruism. In this review, the mechanisms are divided into four categories:
+\begin{equation}
+\label{eq:hamilton}
+C/B < r
+\end{equation}
+
+It is common to distinguish between reciprocal and non-reciprocal altruism. The latter means that the altruists gets no immediate benefit from the transaction.\cite{trivers_evolution_1971} gives an explanation for the mechanisms behind reciprocal altruism.
+Reciprocal altruism is sensible to the presence of non-recipricators, sometimes dubbed 'cheaters' or 'free-riders'. 
+\cite{lehmann_evolution_2006} develops a method of classifying models of what they call 'helping' in which there is a distinction between the act of cooperation and the act of altruism. 
+The transaction between two individuals is seen as cooperation if there is an exchange of fitness benefits, either directly or indirectly over time through repeated interactions. 
+To be altruistic, the exchange has to lead to a direct or indirect decrease in fitness for one of the individuals. 
+This distinction will be used for the remainder of this text. Although the focal point of this article is on the extreme side of altruism, many of the same mechanisms that evolve cooperation apply and are deemed relevant for the study. 
+%In the field of sub-symbolic AI there is interest in evolving solutions to problems by mimicking the mechanisms of natural evolution. A sub-field of this is concerned with evolving altruistic behavior.
+%Self-Sacrifice is a form of extreme altruism and In order to understand the subject of the evolution of altruism in general and to explore the various conditions under which altruism is evolved I conducted a systematic literature review. 
+\cite{montanier_environment-driven_2013} presents a partial review of the most recognized mechanisms that account for the emergence of altruism. In this review, the mechanisms are divided into four categories:
 \begin{description}
-\item[Kin-selection] {The individuals that benefit from the altruistic deed are closely related to the altrist and are also harbours this capability, thus ensuring the survival of the gene}
+\item[Kin-selection] {The individuals that benefit from the altruistic deed are closely related to the altruist and are also harbors this capability, thus ensuring the survival of the gene.}
 \item[Group-selection] {Groups are created randomly containing altruistic and egotistical individuals and the altruists help ensure the survival of the group as a whole. The groups are reorganized at random after some predefined amount of time has passed and without this the altruists would go extinct within their own group.}
-\item[Tag-recognition]{Phenotypic traits are used to idenitfy similarities in the genome, which altruistic individuals use to identify each other to gain selective advantage}
-\item[Environment-viscosity] {In viscous populations, there is a greater chance that the benefit os altruistic actions goes to closely related individuals. This can be seen as a mechanism that ensures kin-selectino}
+\item[Tag-recognition]{Phenotypic traits are used to identify similarities in the genome, which altruistic individuals use to identify each other to gain selective advantage.
+Tag-recognition was first proposed by Hamilton and further explored and named the 'Green Beard' effect in \cite{dawkins_selfish_2006}. 
+}
+\item[Environment-viscosity] {In viscous populations, there is a greater chance that the benefit of altruistic actions goes to closely related individuals. This can be seen as a mechanism that ensures kin-selection.}
 \end{description}
 
+\subsubsection{Evolutionary Computation} In evolutionary computation the solution to a problem has a genetic representation which is analogous to the genes of an individual in biology and a phenotype which is the expression of the genotype. The distinction between the two can be seen as the distinction between the blueprints for a mechanical object and the mechanical object themselves. A group of phenotypes is called a population and the process of optimizing the solutions are done in a process mimicking natural evolution where the best individuals in the population are combined to create new solutions in a new generation. 
+\subsubsection{Iterated Prisoner's Dilemma}
+Various variations on the iterated prisoner's dilemma described in \cite{axelrod_evolution_1981} are often used to explore the different conditions under which cooperation emerges. The game consists of multiple rounds between two participants where each player can choose to cooperate or defect (analogous to cheating) without knowing what the other player will do. The game has the  payoff-matrix shown in table \ref{table:payoff}
+
+\begin{table}[htdp]
+\begin{center}
+\begin{tabular}{|l|c|r|}
+	\hline
+			& Cooperate 	& Defect \\ \hline
+	Cooperate	& R,R		& S,T	 \\ \hline
+	Defect		& T,S	 	& P,P \\\hline\hline
+	\end{tabular}
+\end{center}
+\label{table:payoff}
+\caption{Payoff-matrix in prisoner's dilemma}
+\end{table}
+where $ T > R > P > S$ \\
+
+The central idea is that the dominant strategy for a one-shot game is defection, but in repeated games collaboration can maximize the utility of both.
 
 \subsection{Motivation}
-
-The main area of interest in altruism in evolutionary computation is within the field of embodied evolution where agents are continously adapting to the environment. Creating the mechanisms for the evolution of altruistc behaviour or self-sacrifice is beneficial when this increases the overall fitness of the population with regards to the task to be solved. One instance where the most acute form of altruism could be of use is a group of autonomous robots exploring a glacier where further exploration is only possible if one of the robots drives into a crevasse to form a bridge that the others can runover.    
+%Is the crevasse-example necessary?
+In evolutionary computation there is sometimes the need to evolve an optimal population of individuals so that they in unison solve a problem. 
+Having various degrees of altruism can be necessary to maximize the sum of the endeavours of the individual solutions. 
+One main area of interest in altruism in evolutionary computation is within the field of multi agent systems, especially within embodied evolution where agents are continuously adapting to the environment. One of the long-term goals in this field is to create agile populations of robots that are able to create new solutions to previously unseen problems that  arise and have the necessary mechanisms for ensuring the survival of already functioning genotypes in situations where the temporal changes in the environment could lead to the extinction of desired traits.  
+To achieve this it is important to understand how to design and facilitate the evolutionary process in such a way that not only behavior that can be predicted to be desired in advance is evolved, but also the behavior that is needed, even when it is counter-productive for the individual phenotype.
+Understanding the mechanisms that allow self sacrifice is a step towards understanding the mechanisms that can allow evolutionary computation to be truly adaptive through developing generalized algorithms for evolving behavior that favors solutions that benefit the entire population, or even sub-groups of the population.
+%Creating the mechanisms for the evolution of altruistic behavior or self-sacrifice is beneficial when this increases the overall fitness of the population with regards to the task to be solved. 
+%Self-sacrifice is of interest when there are elements in the environment that require some of the robots to 
+A specific instance where the most acute form of altruism could be of use is a group of autonomous robots working on a  glacier trapped on a sheet of ice where further exploration is only possible if one of the robots drives into a crevasse to form a bridge that the others can run over.    
 \chapter{A review of the literature}
 \label{cha:review}
 
-In this chapter follows a review of the literature on the mechanisms behind the
-evolution of altruism. \ref{sec:biology} gives an introduction to the theory behind the evolution of altruism from theoretical biology.  
-\ref{sec:cs} Gives an overview of the research that has been done on evolving altruism in simulated enviornments using the mechanisms described in theoretical biology.
+In this chapter follows a review of the literature on the research on mechanisms behind the evolution of altruism and cooperation.
+The goal is to give  an overview of the research that has been done on evolving altruism in simulated environments and identify the mechanisms that seem the most promising when considering the possibility of evolving self-sacrifice.
 
-\section{Altruism in Theoretical Biology}
-\label{sec:biology}
-A general framework for classification of the theoretical models of the evolution of altruism and cooperation is suggested in \cite{lehmann_evolution_2006} where four main categories are presented:  
-
-In the classic texts by Hamilton such as \cite{w._d._hamilton_evolution_1963}, \cite{hamilton_genetical_1964-1} and \cite{hamilton_genetical_1964} Hamilton outlines the notion
-that phenotypic traits can be used to identify individuals with similar geneotypes. This idea is further explored and named the 'Green Beard' effect in \cite{dawkins_selfish_2006}. 
-This idea is further extended in \cite{agrawal_kin_2001} by "defining the conditions for the evolution of kin-directed altruism  when recognizers are permitted to make acceptance (type I) and rejection (type II) errors in the identification of social partners with respect to kinship."
-
-\section{Altruism in Computer Science}
+\section{Research on Altruism and Cooperation}
 \label{sec:cs}
 
-\cite{floreano_evolution_2008} presents four different algorithms that may lead to altruistic cooperation. Both selection at the level of the individual and team selection is tested. The experiments simulate ants foraging for food items where two ants can bring back more food by cooperationg than the two separatly can by bringing a food item each. The associated cost is that each ant get less food in return than when cooperating. Higher levels of altruism was observed when using team-level selection and more homogeneous teams had higher overall fitness. 
-\cite{martijn_brinkers_evolution_1999} did simulations of the evolution of altruism with kin-recognition where the altruistic act was indeed self-sacrifice. Agents were placed on a grid, and the grid had parts with land and parts with water. The goal was to forage for food, and agents could drive into the water forming a bridge between two pieces of land so that others could reach the food that existed on the other side. However, this was based on a very simple simulation where the genome evolved was the probability that an agent would drive straight ahead when there was water in front of it. An important point here is that although the results showed that the probability increased when closely related individuals could benefit from it, the act itself was not a behaviour emerging from necessity, rather than by design. 
-Experiments on kin selection in viscous populations was done by \cite{dulk_evolution_2000} exploring the effect it has on the evolution of altruism.This concept is also explored from the viewpoint of theoretial biology in \cite{mitteldorf_population_2000} 
+\cite{floreano_evolution_2008} presents four different algorithms that may lead to altruistic cooperation. Both selection at the level of the individual and team selection is tested. The experiments simulate ants foraging for food items where two ants can bring back more food by cooperating than the two separately can by bringing a food item each. The associated cost is that each ant gets less food in return than when cooperating. Higher levels of altruism was observed when using team-level selection and more homogeneous teams had higher overall fitness. 
+\cite{martijn_brinkers_evolution_1999} did simulations of the evolution of non-reciprocal altruism with kin-recognition where the altruistic act was indeed self-sacrifice. Agents were placed on a grid, and the grid had parts with land and parts with water. The goal was to forage for food, and agents could drive into the water forming a bridge between two pieces of land so that others could reach the food that existed on the other side. However, this was based on a very simple simulation where the genome evolved was the probability that an agent would drive straight ahead when there was water in front of it. An important point here is that although the results showed that the probability increased when closely related individuals could benefit from it, the act itself was not a behavior emerging from necessity, rather than by design. 
+Experiments on kin selection in viscous populations were done by \cite{dulk_evolution_2000} exploring the effect it has on the evolution of altruism. This concept is also explored from the viewpoint of theoretical biology in \cite{joshua_mitteldorf_population_2000}. 
 \cite{montanier_surviving_2011} uses an experimental setup where autonomous robotic agents must forage for food and there is a chance that the situation of the tragedy of commons might occur. The fitness function is implicit by having the robots exchange genomes with every other robot it meets during a generation. The robot then chooses a genome to use at random from its list of genomes and uses a slightly modified version of this. This is interesting because low viscosity increases the fitness at the population level. Altruism is still observed and to a certain degree tuned by introducing a mechanism for kin-selection. 
+\cite{turner_stochastic_2003} explores how different mechanisms for sharing affect the spreading of altruism in a MAS. The agents have no explicit fitness function and their survival is dependant on a stochastic process. The altruistic gene is seeded into the population and they explore different degrees of kinship recognition, the most interesting of which being a scenario where the agents' Phenotypic traits are determined from their genetic makeup, save the gene that determines altruism. The agents use this to judge how likely it is that they are closely related. This is similar to a 'green beard' effect, except that it's not discriminated against non-altruists, only those of sufficient genetic distance.
+\cite{ozisik_effects_2012} includes tags in the selective fitness model to account for some of its shortcomings.
+\cite{hales_change_2005} proposes that tag-mechanisms obviate the need for repeated interactions or genetic relatedness to evolve altruistic behavior. The paper presents the hypothesis that mutating tags at a much higher rate than the behavioral strategy is a precondition for tag-mechanisms to work to avoid being exploited by free-riders. This hypothesis is tested experimentally with one-off prisoner's dilemma-games and the results support the hypothesis.
+%\cite{hazibeganovic_evolution_2012} 
+\cite{spector_genetic_2006} demonstrates experiments using tags where the cost of the altruistic acts exceeds the benefits of the recipient, an important step towards self-sacrifice.
+\cite{mayoh_evolution_2000-1} evolves altruistic strategies in iterated games inspired by game theory where the possible strategies are predefined in the experiments. The interesting point made in this paper is that it provides a model showing that reciprocal altruism can be a good strategy for maximizing utility even in interactions where the other's strategy is unknown, ie. without the use of a tag. 
+Cooperation among non-kin in organisms that lack the capacity to distinguish other altruists are accounted for in \cite{barta_cooperation_2010} by the introduction of the concept of generalized reciprocality. The paper makes the argument that internal state is a factor and that some organisms are more likely to cooperate if they were cooperated with in the last encounter. This is similar to the tit-for-tat strategy in prisoner's dilemma and the results are shown experimentally by introducing state and evolving this strategy under a range of conditions.
+On the other end of the spectrum, \cite{dessalles_coalition_1999} explains this behavior through complex political constructs and sub-group competition. Cooperation in situations where individuals have the capacity to assess the intentions of others are described in \cite{han_role_2011} where the results support the conclusion that intention recognition promotes cooperation.
 
-
-
-
-
-
-
-
-
- 
-%Having a template to work from provides a starting point. However, for a given project, a slight variation in the template may be required due to the nature of the given project. Further, the order in which the various chapters and sections will be written will also vary from project to project but will seldom start at the abstract and sequentially follow the chapters of the report. One critical reason for this, is that you need to start writing as early as possible and you will begin to write up where you are currently focusing. However, do not leave the abstract until the end. The abstract is the first thing anyone reads of an article or thesis --- after the title; and thus it is important that it is very well written. Abstracts are hard to write so create revisions throughout the course of your project as your project progresses.  
-
-%This introduction to background and motivation should state where this project is situated in the field and what the key driving forces motivating this research are. However, keep this section brief as it is still part of the introduction. The motivation will be further extended in chapter~\ref{T-B}, presenting your complete state-of-the-art. 
-
-%Note that this template uses italics to highlight where latin wording is inserted to represent text and the text of the template that we wish to draw your attention to. The italics themself are not an indication that such sections should use italics.  
-
-%\section{Goals and Research Questions}
-%\label{sec:Goals and Research Questions}
-
-%A masters is a research project and thus there needs to be a question(s) that need answered. Such questions are often a very important part of the results that come out of the specialisation project. For those following the one year masters project, it is desirable to create such questions as early as possible as   The formation of such questions provide both an important driving force for the masters project and provide clarity as to the goals sought. However, one will expect to refine the questions and thus the final path of the masters as work progresses. However any refinements should be conducted with care so as to avoid that the original aims, and previous work are not lost.  
-%It is always good to have one (or max 2) key questions and perhaps some sub questions. 
-
-%\begin{description}
-%\item[Goal] {\it Evolve observable and quantifiable altruistic beahaviour (That solves some problem in a new way) } 
-%\end{description}
-
-%Your goal/objective should be described in a single sentence. In the text under you can expand on this sentence to clarify what is meant by the short goal description. 
-%The goal of your work is what you are trying to achieve. This can either be the goal of your actual project or can be a broader goal that you have taken steps towards achieving. Such steps should be expressed in the research questions. 
-%Note that the goal is seldom to build a system. A system is built to to enable experiments to be conducted. The research question/goal would be the goal that the system is implemented to meet.  
-
-
-%\begin{description}
-%\item[Research question 1] {\it A clever research question about strong altruism}
-%\end{description}
-
-%Some more explanation here
-
-%Each research question provides a sub-goal and these should be precise and clearly stated enabling the reader to match your results to the original goals. They will also form the driving force for the experimental plan. 
-
-%\begin{description}
-%\item[Research question 2] {\it Lorem ipsum dolor sit amet, consectetur adipiscing elit.}
-%\end{description}
-
-%{\it Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam consequat pulvinar hendrerit. Praesent sit amet elementum ipsum. Praesent id suscipit est. Maecenas gravida pretium magna non }
-
-%\section{Research Method}
-%\label{sec:researchMethod}
-
-%What methodology will you apply to address the goals: theoretic/analytic, model/abstraction or design/experiment? This section will describe the research methodology applied and the reason for this choice of research methodology.  
-
-%\section{Contributions}
-%\label{sec:IntroContributions}
-%
-%The main description of the contributions will come in chapter~\ref{cont} after the results are presented. This section just provides a brief summary of the main contributions of the work. This section can also be left out, leaving all discussions in chapter~\ref{cont}.
-%
-%The format of this section will generally follow the following format:
-%{\it
-%Donec non turpis nec neque egestas faucibus nec id neque. Etiam consectetur, odio vitae gravida tempus, diam velit sagittis turpis, a molestie ligula tellus at nunc. Nam convallis consequat vestibulum. Proin dolor neque, dapibus a pellentesque a, commodo a nibh.}
-
-%\begin{enumerate}
-%\item {\it Lorem ipsum dolor sit amet, consectetur adipiscing elit.}
-%\item {\it Lorem ipsum dolor sit amet, consectetur adipiscing elit.}
-%\item {\it Lorem ipsum dolor sit amet, consectetur adipiscing elit.}
-%\end{enumerate}
-%
-
-%\section{Thesis Structure}
-%\label{sec:thesisStructure}
-
-%This section provides the reader with an overview of what is coming in the next chapters. You want to say more than what is explicit in the chapter name, if possible, but still keep the description short and to the point. 
-
-
-%\chapter{Background Theory and Motivation}\label{T-B}
-%\label{cha:TheoryAndBackground}
-
-%{\it Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam consequat pulvinar hendrerit. Praesent sit amet elementum ipsum. Praesent id suscipit est. Maecenas gravida pretium magna non interdum. Donec augue felis, rhoncus quis laoreet sed, gravida nec nisi. Fusce iaculis fermentum elit in suscipit.}
-
-
-%\section{Background Theory}
-%\label{sec:no1}
-
-%The background theory depth and breadth depends on the depth needed to understand your project in the different disciplines that your project crosses.  It is not a place to just write about everything you know that is vaguely connected to your project. The theory is here to help the reader that does not know the theoretical basis of your work so that he/she can gain sufficient understanding to understand your contributions. In particular, the theory section provides an opportunity to introduce terminology that can later be used without disturbing the text with a definition.  In some cases it will be more appropriate to have a separate section for different theory. However, watch that you don't end up with too short sections. Subsections may also be used to separate different background theory. 
-
-%When introducing techniques or results, always reference the source. Be careful to reference the original contributor of a technique and not just someone who happens to use the technique. For relevant results to your work, you would want to look particularly at newer results so that you have referenced the most up-to-date work in your area. If you don't have the source handy when writing, mark the test that a reference is needed and add it later. 
-
-%Web pages are not reliable sources --- they might be there one day and removed the next; and thus should be avoided, if possible. A verbal discussion is not a source and should not be referenced or described in the text.  
-
-%The bulk of citations in the report will appear in section~\ref{cit}. However, you will often need to introduce some terminology and key citations already in this chapter. 
-
-%You can cite a paper in the following manners: 
-
-%\begin{itemize}
-%\item when referring to authors:\\
- %\citet{authorson10:_secon_best_paper_in_world} stated something rather nice.
-%\item to cite indirectly: \\
-% Papers should be written nicely \citep{authorson10:_secon_best_paper_in_world}\\
-%or\\
-%In \cite{authorson10:_secon_best_paper_in_world}, a less detailed template was presented.
-%\item To just cite the authors: \\
-%\citeauthor{authorson10:_secon_best_paper_in_world} wrote a nice paper.
-%\item Or just the year: \citeyear{authorson10:_secon_best_paper_in_world}.
-%\item You can even cite specific pages: \citet[p. 3]{authorson10:_secon_best_paper_in_world}.
-%\end{itemize}
-%
-%\vspace{0.5cm}
-%
-%\noindent
-%{\bf Introducing figures:} \\
-
-%\begin{figure}[ht]
-%\begin{center}
-%\includegraphics[width=0.5\columnwidth]{figs/figure1.pdf}
-%\caption[Boxes and arrows are nice]{Boxes and arrows are nice (adapted from \citet{authorson10:_secon_best_paper_in_world})}
-%\label{fig:BoxesAndArrowsAreNice}
-%\end{center}
-%\end{figure}
-
-%Remember that when you borrow figures you should always credit the original author --- such as Figure \ref{fig:BoxesAndArrowsAreNice} (adapted from \citet{authorson10:_secon_best_paper_in_world}). Also don't just put the figure in and leave it to the author to try to understand what the figure is. The figure should be put in to convey a message and you need to help the author to understand the message intended by explaining the figure in the text. 
-%
-%\vspace{0.5cm}
-%
-%\noindent
-%{\bf Introducing tables in the report: }\\
-
-%\begin{table}[htdp]
-%\begin{center}
-%\begin{tabular}{|c|c|c|c|c|}\hline\hline
-%This & is & a & nice & table\\\hline
-%This & is & a & nice & table\\\hline\hline
-%\end{tabular}
-%\caption{Example Table}
-%\end{center}
-%\label{tab:ExampleTable}
-%\end{table}%
-
-%As you can see from Table \ref{tab:ExampleTable}, tables are nice. However, again, you need to discuss the contents of the table in the text. You don't need to describe every entry but draw the authors attention to what is important for he/she to glean from the table. 
 
 \chapter{Discussion}
 \label{cha:discussion}
 
-Some introductory text here
+In this section the implications of the findings in the review are discussed and a research question is posed.
 
-\section{Evaluation}
+\section{Kin-Recognition}
 
-Exploring the evolution of altruistic behaviour and in particular the relationship between the evolution of altruism and genetic diversity leads to the question of 
-whether or not kin-recognition is a precondition for the evolution of self sacrifice. 
-
-
+Exploring the research on the artificial evolution of altruistic behavior and in particular the relationship between the evolution of altruism and the recognition of related individuals leads to the question of whether or not kin-recognition is a precondition for the evolution of self sacrifice. At this point, it is important to keep in mind that recreating the conditions for self-sacrifice in nature is but a mean to achieve the desired results in evolutionary computing and not goal in itself. This means that the research question and the proposed research is not geared towards explaining the observations from nature, it is directed towards finding mechanisms that can be used to solve a problem.
+The research question that arose is presented here:
 \begin{description}
-\item[Research question] {\it Will self sacrifice be possible without having any form of recognition of
+\item[Research question] {\it Will the evolution of self-sacrifice be possible without having any form of recognition of
     kin between recipients and benefactors?}
 \end{description}
 
-In this context, self sacrifice is thought of as relinquishing ones own possibility of further dissemination of ones own genes in order to ensure the possibility of another's.
+In this context, self sacrifice is thought of as the focal individual relinquishing its own possibility of further dissemination of ones own genes in order to enhance the the possibility of spreading the recipient's genes.
 Recognition of kin implies that the benefactor has a way of discriminating between those who have a genetic composition that is close to its own and those who do not.
+The literature shows that large degrees of altruism is rarely displayed without some form of explicit kin-recognition and there is reason to believe that evolving self sacrifice without kin recognition isn't possible. 
+In this case, the null hypothesis is that it is impossible to evolve self-sacrifice without kin-recognition and failure to reject it would also be a result. 
+The most promising of the simulations in the reviewed literature is that of \cite{barta_cooperation_2010} where cooperation between individuals is evolved using the concept of generalized reciprocality.  
+
+%\cite{agrawal_kin_2001} define "the conditions for the evolution of kin-directed altruism  when recognizers are permitted to make acceptance (type I) and rejection (type II) errors in the identification of social partners with respect to kinship."
+\section{Further Work}
+To explore the research question further an experimental set up implementing the concept of generalized reciprocality, where the possibility of increasing the reciprocation by investing more in the transaction exists, could be used. 
+This environment could facilitate the evolution of generous altruism when a group of altruists interact in viscous environment creating a positive feedback-loop. 
+This could potentially lead to the emergence of individuals prone to give up benefit to such a degree that it is debilitating for further reproduction of the focal individual, but helps out the collective. 
+If this gives positive results, mechanisms for detrimenting the feedback-loop could be implemented. 
+The first experiment could be conducted using a very simple model with few obstacles, and given successful results, the model could be expanded by adding more and more realistic features giving the individuals less reason to sacrifice benefit. The model would use an indirect fitness function to ensure that the altruistic trait would be evolved as a consequence of it being an optimal strategy for the survival of a family of genes, rather than a trait that is specifically rewarded. Alternatively, the individuals could be given a global goal where the whole population is rewarded according to the fulfilment of that goal rather than individual performance. 
+The results presented in \cite{han_role_2011} suggest that it could be worthwhile to ensure a way of intention recognition in the model, although not strong enough to produce self-sacrifice in itself, it could be an auxiliary technique to improve the level of altruism.
 
 
 \chapter{Systematic Literature Review Protocol}\label{T-B}
@@ -368,7 +285,7 @@ The literature review process is divided into 8 steps: %Check Kitchenham 2007
 
 \item[Step 6] {\it Data Collection}
 
-\item[Step 7] {\it Data synthesis and anaylysis}
+\item[Step 7] {\it Data synthesis and analysis}
 
 \item[Step8] {\it Dissemination}
 
@@ -376,13 +293,13 @@ The literature review process is divided into 8 steps: %Check Kitchenham 2007
 
 \clearpage 
 
-\section{Defining the review questions}
+\section{Defining the Review Questions}
 The first step in the systematic review process was to formalize the the goal of the review into review questions that the review is meant to answer. The goal of the review was to answer the following questions:
 
 \begin{description}
-\item[RQ1] {\it What are the mechanisms that allow altruistic behaviour to evolve?} 
+\item[RQ1] {\it What are the mechanisms that allow altruistic behavior to evolve?} 
 \item[RQ2] {\it What are the most important factors in determining the degree of altruism displayed?}
-\item[RQ3] {\it What is the level of altruism that has been achieved in artificial evolution?}
+\item[RQ3] {\it Which methods show the most promise in achieving self sacrificial behaviour in artificial evolution?}
 
 \end{description}
 
@@ -390,292 +307,289 @@ The first step in the systematic review process was to formalize the the goal of
 
 %I'm not sure what to write here as I'm detailing the protocol as I go along.
 
-\section{Search for relevant studies}
+\section{Search for Relevant Studies}
 
-To perform the search in a systematic way I compiled a list of of relevant sources which would be the subject to systematic query. I decided to use the list compiled in \cite{Lillegraven_design_2010} as a starting point as it presented a list of relevant sources both for research on computer science in general and Artificial Intelligence. 
+To perform the search in a systematic way I compiled a list of of relevant sources which would be the subject to systematic query. I decided to use the list compiled in \cite{Lillegraven_design_2010} as a starting point as it presented a list of relevant sources both for research on computer science in general and had already been used to find sources in Artificial Intelligence. 
 %In Addition to the sources identified there I also added Google Scholar and Science Direct as suggested by 
 %\cite{Brereton_lessons_2007}. Google Scholar would be my primary source in identifying relevant papers The list of sources is shown in table \ref{table:sources}
- 
 
 
+\begin{table}[htdp]
 \begin{center}
-    \begin{tabular}{|l|c|r|}
-    \hline
-    Source                  &   Type                        & URL \\ \hline \hline
-    ACM Digital Library     &   Digital Library             & \url{http://portal.acm.org/dl.cfm} \\  \hline %Subscription
-    IEEE Xplore             &   Digital Library             & \url{http://ieeexplore.ieee.org/} \\ \hline   %Subscription
-    CiteSeerX               &   Digital Library             & \url{citeseerx.ist.psu.edu} \\ \hline         %Free
-    Web of Knowledge        &   Digital Library             & \url{http://wokinfo.com/} \\ \hline           %Free
+\begin{tabular}{|l|c|r|}\hline
+Source                  &   Type                        & URL \\ \hline \hline
+ACM Digital Library     &   Digital Library             & \url{http://portal.acm.org/dl.cfm} \\  \hline %Subscription
+IEEE Xplore             &   Digital Library             & \url{http://ieeexplore.ieee.org/} \\ \hline   %Subscription
+CiteSeerX               &   Digital Library             & \url{citeseerx.ist.psu.edu} \\ \hline         %Free
+Web of Knowledge        &   Digital Library             & \url{http://wokinfo.com/} \\ \hline           %Free
 %    Google Scholar          &   Bibliographic Database      & \url{http://scholar.google.com} \\ \hline     %Free
-    Journal of AI Resarch   &   Journal                     & \url{http://jair.org/} \\  \hline      %Free
-    References in papers    &   N/A                         & N/A \\\hline
-    \label{table:sources}
-    \end{tabular}
+Journal of AI Research   &   Journal                     & \url{http://jair.org/} \\  \hline      %Free
+References in papers    &   N/A                         & N/A \\\hline\hline
+\end{tabular}
 \end{center}
-
+\label{table:sources}
+\caption{Sources considered in the online search}
+\end{table}
 \subsection{Searching the online resources }
-Following the methodology in \cite{oates_researching_2005} I created groups of search terms that were synonyms or similar in meaning. The purpose of this was to exploit the possibility of using boolean search strings in modern digital libraries. The search for relevant literature is a continous processand I present here the tables of search terms I used over the course of the project. The table in \ref{table:terms1} shows the table I ended up using.% At This point I was still looking at altruism in swarm robotics, which I later abandoned to avoid this self-imposed constriction. Many of the papers I found were of use in general, despite this. 
-
+Following the methodology in \cite{oates_researching_2005} I created groups of search terms that were synonyms or similar in meaning. The purpose of this was to exploit the possibility of using boolean search strings in modern digital libraries. 
+The search for relevant literature is a continuous process and I went through a number of different tables of search terms. 
+The table of search terms presented in table \ref{table:terms2} is the one I ended up using. The sparsity of the table is a conscious choice as having a general search query and then narrow the results down based on research subject proved a more effective method for finding relevant literature.
+The search terms were combined in the boolean search string in equation \ref{eq:search2}
 %\begin{center}
 %   \begin{tabular}{| l | c | c | r |}
 %     \hline
 %      & Group 1 & Group 2 & Group 3 \\ \hline
 %      Term 1 & Altruism & Evolution & Swarm Robots \\ \hline
 %      Term 2 & Tragedy of Commons & Natural Selection & Swarm Intelligence \\ \hline
-%      Term 3 & Collaboration & Evolving & Swarm Behaviour \\ \hline
+%      Term 3 & Collaboration & Evolving & Swarm Behavior \\ \hline
 %      Term 4 & & Evolutionary & \\ \hline
 %      Term 5 & & Genetic & \\
-%      \hline
-%       \label{table:terms1}
-%       \end{tabular}
-%end{center}
-%     
-%his provided me with a set of 
-%
-%begin{equation}
-%label{eq:comb}
-%*5*3 = 60
-%end{equation}
-%
-\noindent
-combinations of search terms. Combining the different search terms created the search string in \ref{eq:search}
-\\
-%\noindent
-%begin{multline}
-%label{eq:search}
-%"Swarm Behaviour" \lor "Swarm Robotics" \lor "Swarm Intelligence") \land \\
-%Evolutionary \lor Evolution \lor Evolving \lor Natural Selection \lor Genetic) \land \\
-%Altruism \lor Altruistic \lor Tragedy of Commons) \\
-%end{multline}
-%
-\begin{center}
-    \begin{tabular}{| l | c | r |}
-      \hline
-       & Group 1 & Group 2 \\ \hline
-       Term 1 & Altruism 	& Evolution  \\ \hline
-       Term 2 & Self-Sacrifice	& Natural Selection \\ \hline
-       Term 3 & 		& Evolving   \\ \hline
-       Term 4 & 		& Evolutionary  \\ \hline
-       \hline
-	\label{table:terms2}
-       \end{tabular}
-      \end{center}
-      
-This provided me with a set of 
-\begin{equation}
-\label{eq:comb2}
-2*4 = 8 
-\end{equation}
+		%      \hline
+		%       \label{table:terms1}
+		%       \end{tabular}
+		%end{center}
+		%     
+		%his provided me with a set of 
+		%
+		%begin{equation}
+		%label{eq:comb}
+		%*5*3 = 60
+		%end{equation}
+		%
+		%\noindent
+		%combinations of search terms. Combining the different search terms created the search string in \ref{eq:search}
+		%\noindent
+		%begin{multline}
+		%label{eq:search}
+		%"Swarm Behavior" \lor "Swarm Robotics" \lor "Swarm Intelligence") \land \\
+			%Evolutionary \lor Evolution \lor Evolving \lor Natural Selection \lor Genetic) \land \\
+			%Altruism \lor Altruistic \lor Tragedy of Commons) \\
+			%end{multline}
+			%
+			\begin{table}[htdp]
+			\begin{center}
+			\begin{tabular}{| l | c | r |}
+			\hline
+			& Group 1 & Group 2 \\ \hline
+			Term 1 & Altruism 	& Evolution  \\ \hline
+			Term 2 & Self-Sacrifice	& Natural Selection \\ \hline
+			Term 3 & 		& Evolving   \\ \hline
+			Term 4 & 		& Evolutionary  \\ \hline\hline
+			\end{tabular}
+			\end{center}
+			\label{table:terms2}
+			\caption{Search terms used}
+			\end{table}
+			%This provided me with a set of 
+			%\begin{equation}
+			%\label{eq:comb2}
+			%2*4 = 8 
+			%\end{equation}
 
-%\noindent
-%pairs of combinations of search terms that was combined as shown in \ref{eq:search2}
-
-
-%\begin{center}
-%    \begin{tabular}{| l | c | c | r |}
-%      \hline
-%       & Group 1 & Group 2 & Group 3 \\ \hline
-%       Term 1 & Altruism & Evolution & Kin-selection\\ \hline
-%       Term 2 & Altruistic & Natural Selection & Viscosity\\ \hline
-%       Term 3 & Self-sacrifice & Evolving &  \\ \hline
-  %     Term 4 & & Evolutionary & \\ \hline
- %      \hline
-%	\label{table:terms1}
-%	\end{tabular}
-%\end{center}
-
-%This provided me with a set of 
-
-%\begin{equation}
-%\label{eq:comb2}
-
-%2*4*2 = 16 
-
-%\end{equation}
-
-combinations of search terms combined in the boolean expression:
-
-\begin{center}
-\begin{multline}
-\label{eq:search2}
-(Altruism \lor Altruistic ) \land \\
-(Evolution \lor Natural Selection\ \lor Evolving \lor Evolutionary)
-\end{multline}
- \end{center}
-%\subsection{Searching offline}
-%To limit the number of results, the search was set to only return results published
-%in the last 5 years. The rationale was that this field of research is still in
-%its infancy and that the most relevant studies would be the most recent. This turned 
-%out to be a wrongful assumption, and later iterations did not limit the search
-%based on year of publication.
-
-%\subsubsection{ACM Digital Library}
-For the ACM Digital Library, the number of results on the original search query
-was so large that it had to be further limited by only including entries from 
-relevant publications. Of the publications that returned matches for the query,
-only two of them were included in the final search:
-
-\begin{itemize}
-
-%\item{Proceedings of the 13th annual conference companion on Genetic and evolutionary computation (255)}
-%\item{Proceedings of the 11th International Conference on Autonomous Agents and Multiagent Systems - Volume 3 (175) }
-%\item{The 10th International Conference on Autonomous Agents and Multiagent Systems - Volume 3 (171)}
-\item{Proceedings of the 9th annual conference on Genetic and evolutionary computation}
-\item{Proceedings of the fourteenth international conference on Genetic and evolutionary computation conference companion}
-\item{Proceeding of the fifteenth annual conference companion on Genetic and evolutionary computation conference companion}
-\item{Autonomous Agents and Multi-Agent Systems}
-\item{Evolutionary Computation}
-\item{Proceedings of the fourth international joint conference on Autonomous agents and multiagent systems}
-\item{Proceedings of The 8th International Conference on Autonomous Agents and Multiagent Systems - Volume 2 }
-\item{Artificial Life and Robotics}
-\item{Proceedings of the 2004 international conference on Multi-Agent and Multi-Agent-Based Simulation }
-\item{Proceedings of the Twenty-Second international joint conference on Artificial Intelligence - Volume Volume Two}
-\item{Artificial Intelligence}
-\item{Autonomous Robots}
-\item{Neural Networks}
-\item{Artificial Intelligence Review }
-\end{itemize}
-
-The search was further refined by adding the constraint that the title had to include
-
-$Altruism \lor Altruistic$
+			%\noindent
+			%pairs of combinations of search terms that was combined as shown in \ref{eq:search2}
 
 
+			%\begin{center}
+			%    \begin{tabular}{| l | c | c | r |}
+			%      \hline
+			%       & Group 1 & Group 2 & Group 3 \\ \hline
+			%       Term 1 & Altruism & Evolution & Kin-selection\\ \hline
+			%       Term 2 & Altruistic & Natural Selection & Viscosity\\ \hline
+			%       Term 3 & Self-sacrifice & Evolving &  \\ \hline
+			%     Term 4 & & Evolutionary & \\ \hline
+			%      \hline
+			%	\label{table:terms1}
+			%	\end{tabular}
+			%\end{center}
 
-Springer Link allows filtering on research field, so the search was limited to Artificial Intelligence.
+			%This provided me with a set of 
 
-On CiteSeer, the constraint on the terms "Viscosity" and "selective fitness" was relaxed.
+			%\begin{equation}
+			%\label{eq:comb2}
 
-The search string for IEEE Xplore was also limited to the publications
+			%2*4*2 = 16 
 
+			%\end{equation}
 
-\begin{itemize}
-\item{ Evolutionary Computation, IEEE Transactions on}
-\item{Computational Intelligence in Robotics and Automation, 1997. CIRA'97., Proceedings., 1997 IEEE International Symposium on}
-\item{Intelligent System and Knowledge Engineering, 2008. ISKE 2008. 3rd International Conference on}
-\end{itemize}
-The search on Web of Knowledge was refined to include only results from the research domains Science Technology and computer science
-\subsubsection{Search Results}
+			%combinations of search terms combined in the boolean expression:
 
-Applying the search string in \ref{eq:search2} to the sources in \ref{table:sources} yielded the results shown in table \ref{table:SearchResults}
+			\begin{center}
+			\begin{multline}
+			\label{eq:search2}
+			(Altruism \lor Altruistic ) \land \\
+				(Evolution \lor Natural Selection\ \lor Evolving \lor Evolutionary)
+				\end{multline}
+				\end{center}
+				%\subsection{Searching offline}
+				%To limit the number of results, the search was set to only return results published
+				%in the last 5 years. The rationale was that this field of research is still in
+				%its infancy and that the most relevant studies would be the most recent. This turned 
+				%out to be a wrongful assumption, and later iterations did not limit the search
+				%based on year of publication.
 
-\begin{center}
-    \begin{tabular}{|l|r|}
-    \hline
-	Source				& Hits 	\\ \hline
-	Springer Link 			& 39 	\\ \hline
-%    Google Scholar & 217 \\ \hline
-	CiteSeer    			& 26 \\ \hline
-    	ACM Digital Library 		& 25 \\ \hline
-    	IEEE Xplore 			& 4  \\ \hline
-	Web of Knowledge 		& 23 \\ \hline
-    	Journal of AI Research 		& 0 	\\ \hline
-	Other  				& 2 \\ 
-    \hline
-     \label{table:SearchResults}
-   \end{tabular}
-\end{center}
+				\subsubsection{ACM Digital Library}
+				For the ACM Digital Library, the number of results on the original search query
+				was so large that it had to be further limited by only including entries from 
+				relevant publications. Of the publications that returned matches for the query,
+				these were included in the final search:
 
-In addition to exploring the vast online resources I also searched available literature in the University Library and checked reference lists 
-in the articles I read that were of particular interest if the theme they referenced fit some of my inclusion criteria or if the title alone fit one or more of my inclusion criteria.
+				\begin{itemize}
 
-%\begin{tabular}{| p{5cm} | p{5cm} |}
-%	\hline
-%	Title of paper found & Referenced in \\ \hline
-%        The evolution of cooperation and altruism  a general framework and a classification of models & Evolution of Altruistic Robots \\ \hline
-%\end{tabular}
+				%\item{Proceedings of the 13th annual conference companion on Genetic and evolutionary computation (255)}
+				%\item{Proceedings of the 11th International Conference on Autonomous Agents and Multiagent Systems - Volume 3 (175) }
+				%\item{The 10th International Conference on Autonomous Agents and Multiagent Systems - Volume 3 (171)}
+				\item{Proceedings of the 9th annual conference on Genetic and evolutionary computation}
+				\item{Proceedings of the fourteenth international conference on Genetic and evolutionary computation conference companion}
+				\item{Proceeding of the fifteenth annual conference companion on Genetic and evolutionary computation conference companion}
+				\item{Autonomous Agents and Multi-Agent Systems}
+				\item{Evolutionary Computation}
+				\item{Proceedings of the fourth international joint conference on Autonomous agents and multiagent systems}
+				\item{Proceedings of The 8th International Conference on Autonomous Agents and Multiagent Systems - Volume 2 }
+				\item{Artificial Life and Robotics}
+				\item{Proceedings of the 2004 international conference on Multi-Agent and Multi-Agent-Based Simulation }
+				\item{Proceedings of the Twenty-Second international joint conference on Artificial Intelligence - Volume Volume Two}
+				\item{Artificial Intelligence}
+				\item{Autonomous Robots}
+				\item{Neural Networks}
+				\item{Artificial Intelligence Review }
+				\end{itemize}
 
-	
-\subsection{Selection of studies}
+				\subsubsection{Springer Link}Springer Link allows filtering on research field, so the search was limited to Artificial Intelligence.
 
-After applying the search strategy I began selecting the studies that were relevant for my research questions. To filter the number of studies found I employed a three stage screening process where the set of found articles were gradually culled according to a set of inclusion critereas. The three stage process was:
+				%\subsubsection{CiteSeer} On CiteSeer the constraint on the terms "Viscosity" and "selective fitness" was relaxed.
 
-\begin{itemize}
+				\subsubsection{IEEE Xplore}
+				The search string for IEEE Xplore was also limited to the publications
 
-\item screning based on title
-\item Screening based on contents in the Abstract
-\item Screening based on full-text reading
-\item Screening based on quality
+				\begin{itemize}
+				\item{ Evolutionary Computation, IEEE Transactions on}
+				\item{Computational Intelligence in Robotics and Automation, 1997. CIRA'97., Proceedings., 1997 IEEE International Symposium on}
+				\item{Intelligent System and Knowledge Engineering, 2008. ISKE 2008. 3rd International Conference on}
+				\end{itemize}
 
-\end{itemize}
+				\subsubsection{Web of Knowledge} The search on Web of Knowledge was refined to include only results from the research domains Science Technology and computer science.
 
-\subsubsection{Screening based on title}
-The first level of screening was based on excluding articles based on the following criteria:
+				\subsubsection{Search Results}
 
-\begin{description}
-\item[EQ1] {\it The main focus of the title is not within the field of computer science}
-\item[EQ2] {\it It can be quickly determined from the title that the focus of the research is neither AI nor theoretical biology related to altruism}
-\end{description}
+				Applying the search string in \ref{eq:search2} to the sources in \ref{table:sources} yielded the results shown in table \ref{table:SearchResults}
+				\begin{table}[htdp]
+				\begin{center}
+				\begin{tabular}{|l|r|}
+				\hline
+				Source				& Hits 	\\ \hline
+				Springer Link 			& 39 	\\ \hline
+				%    Google Scholar & 217 \\ \hline
+				CiteSeer    			& 26 \\ \hline
+				ACM Digital Library 		& 25 \\ \hline
+				IEEE Xplore 			& 4  \\ \hline
+				Web of Knowledge 		& 23 \\ \hline
+				Journal of AI Research 		& 0 	\\ \hline
+				Other  				& 2 \\\hline\hline
+				\end{tabular}
+				\end{center}
+				\label{table:SearchResults}
+				\caption{Search results for the search string in equation \ref{eq:search2}}
+				\end{table}
+				In addition to exploring the vast online resources I also searched available literature in the University Library and checked reference lists in the articles I read that were of particular interest if the theme they referenced fit some of my inclusion criteria or if the title alone fit one or more of my inclusion criteria.
 
-
-\subsubsection{Abstract inclusion criteria screening}
-
-The inclusion criterias that were used for the screening based on the contents in the abstract were:
-
-\begin{description}
-\item[IC1] {\it The paper focuses mainly on evolving altruistic behaviour using artificial evolution}
-\item[IC2] {\it The paper focuses mainly on one of the mechanisms behind the evolution of altruistic behaviour in nature}
-\end{description}
-
-Before the full text inclusion criteria screening, the search results were as follows:
-\begin{center}
-    \begin{tabular}{|l|r|}
-    \hline
-	Source				& Hits 	\\ \hline
-	Springer Link 			& 3 	\\ \hline
-%    Google Scholar & 217 \\ \hline
-	CiteSeer    			& 4 \\ \hline
-    	ACM Digital Library 		& 5 \\ \hline
-    	IEEE Xplore 			& 1  \\ \hline
-	Web of Knowledge 		& 5 \\ \hline
-    	Journal of AI Research 		& 0 	\\ \hline
-	Other  				& 2 \\ \hline \hline
-	Total				& 20 \\
-    \hline
-     \label{table:SearchResults}
-   \end{tabular}
-\end{center}
-
-
-\subsubsection{Full text inclusion criteria screening}
-
-\begin{description}
-\item[IC4] {\it The paper focuses mainly on evolving altruistic behaviour using artificial evolution}
-\item[IC6] {\it The paper recreates one or more of the settings in which altruistic behaviour evolve}
-\item[IC7] {\it The paper studies the genetic preconditions for the evolution of altruistic behavior}
-\end{description}
-
-\subsubsection{Full text quality criteria screening}
-
-\begin{description}
-\item[QC1] {\it There is a clear statement of the aim of the research} 
-\item[QC2] {\it The Study is put into context of other studies and research}
-\end{description}
-
-%\subsection{Quality assessment}
-%The papers were screened based on the following quality criteria:
-
-%\subsection{List of included papers}
-%\noindent
-%\begin{center}
-%    \begin{tabular}{| p{5cm} | p{3cm} | r |}
-%      \hline
-%       Title & Author(s) & Source \\ \hline
-%       	Evolution of Altruistic Robots & \begin{tabular}{l}Dario Floreano \\ Sara Mitri1\\ Andres Perez-Uribe \\ and Laurent Keller \\ \end{tabular} & Google Scholar  \\ \hline
-%	The Evolution of Non-reciprocal Altruism & \begin{tabular}{l}Martijn Brinkers \\ Paul den Dulk\end{tabular} & ACM Digital Library \\ \hline
-%	Evolution of Altruism in Viscous Populations: Effects of Altruism on the Evolution of Migrating Behavior & \begin{tabular}{l}Martijn Brinkers \\ Paul den Dulk\end{tabular} & ACM Digital Library \\ \hline
-%	The Evolution of Altruistic Behavior & W. D. Hamilton & Google Scholar \\ \hline
-	
- %      \end{tabular}
- %     \end{center}
+				%\begin{tabular}{| p{5cm} | p{5cm} |}
+				%	\hline
+				%	Title of paper found & Referenced in \\ \hline
+				%        The evolution of cooperation and altruism  a general framework and a classification of models & Evolution of Altruistic Robots \\ \hline
+				%\end{tabular}
 
 
-\section{Data collection}
-Given the exploratory nature of this literature review the data collection consisted of reading the material and
-noting interesting points. 
+				\subsection{Selection of Studies}
 
-\section{Data synthesis and analysis}
+				After applying the search strategy I began selecting the studies that were relevant for my research questions. To filter the number of studies found I employed a three stage screening process where the set of found articles were gradually culled according to a set of inclusion criteria. The three stage process was:
 
+				\begin{itemize}
+
+				\item screening based on title
+				\item Screening based on contents in the Abstract
+				\item Screening based on full-text reading
+				\item Screening based on quality
+
+				\end{itemize}
+
+				\subsubsection{Screening based on title}
+				The first level of screening was based on excluding articles based on the following criteria:
+
+				\begin{description}
+				\item[EQ1] {\it The main focus of the title is not within the field of computer science}
+				\item[EQ2] {\it It can be quickly determined from the title that the focus of the research is neither AI nor theoretical biology related to altruism}
+				\end{description}
+
+
+				\subsubsection{Abstract inclusion criteria screening}
+
+				The inclusion criteria that were used for the screening based on the contents in the abstract were:
+
+				\begin{description}
+				\item[IC1] {\it The paper focuses mainly on evolving altruistic behavior using artificial evolution}
+				\item[IC2] {\it The paper focuses mainly on one of the mechanisms behind the evolution of altruistic behavior in nature}
+				\end{description}
+
+				Before the full text inclusion criteria screening, the search results were as follows:
+				\begin{table}[htdp]
+				\begin{center}
+				\begin{tabular}{|l|r|}
+				\hline
+				Source				& Hits 	\\ \hline
+				Springer Link 			& 3 	\\ \hline
+				%    Google Scholar & 217 \\ \hline
+				CiteSeer    			& 4 \\ \hline
+				ACM Digital Library 		& 5 \\ \hline
+				IEEE Xplore 			& 1  \\ \hline
+				Web of Knowledge 		& 5 \\ \hline
+				Journal of AI Research 		& 0 	\\ \hline
+				Other  				& 2 \\ \hline \hline
+				Total				& 20 \\\hline\hline
+				\end{tabular}
+				\end{center}
+				\label{table:SearchResults}
+				\caption{Search results after applying EQ1, EQ2, IC2 and IC2}
+				\end{table}
+				\subsubsection{Full text inclusion criteria screening}
+
+				\begin{description}
+				\item[IC4] {\it The paper focuses mainly on evolving altruistic behavior using artificial evolution}
+				\item[IC6] {\it The paper recreates one or more of the settings in which altruistic behavior evolves}
+				\item[IC7] {\it The paper studies the genetic preconditions for the evolution of altruistic behavior}
+				\end{description}
+
+				\subsubsection{Full text quality criteria screening}
+
+				\begin{description}
+				\item[QC1] {\it There is a clear statement of the aim of the research} 
+				\item[QC2] {\it The Study is put into context of other studies and research}
+				\end{description}
+
+				%\subsection{Quality assessment}
+				%The papers were screened based on the following quality criteria:
+
+				%\subsection{List of included papers}
+				%\noindent
+				%\begin{center}
+				%    \begin{tabular}{| p{5cm} | p{3cm} | r |}
+				%      \hline
+				%       Title & Author(s) & Source \\ \hline
+				%       	Evolution of Altruistic Robots & \begin{tabular}{l}Dario Floreano \\ Sara Mitri1\\ Andres Perez-Uribe \\ and Laurent Keller \\ \end{tabular} & Google Scholar  \\ \hline
+				%	The Evolution of Non-reciprocal Altruism & \begin{tabular}{l}Martijn Brinkers \\ Paul den Dulk\end{tabular} & ACM Digital Library \\ \hline
+				%	Evolution of Altruism in Viscous Populations: Effects of Altruism on the Evolution of Migrating Behavior & \begin{tabular}{l}Martijn Brinkers \\ Paul den Dulk\end{tabular} & ACM Digital Library \\ \hline
+				%	The Evolution of Altruistic Behavior & W. D. Hamilton & Google Scholar \\ \hline
+
+				%      \end{tabular}
+				%     \end{center}
+
+
+				\section{Data Collection}
+				Given the exploratory nature of this literature review the data collection consisted of reading the material and
+				noting interesting points. 
+
+
+Data synthesis and analysis is given in chapter \ref{cha:review} and \ref{cha:discussion}
 \section{Dissemination}
 Dissemination means communicating the results, in this instance the review was handed in as part
 of a project.
